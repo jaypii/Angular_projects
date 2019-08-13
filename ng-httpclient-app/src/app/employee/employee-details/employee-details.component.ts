@@ -15,12 +15,19 @@ export class EmployeeDetailsComponent implements OnInit {
     public restApi: RestApiService,
     public actRoute: ActivatedRoute,
     public router: Router
-  ) { 
-  }
+  ) { }
 
   ngOnInit() { 
     this.restApi.getEmployee(this.id).subscribe((data: {}) => {
       this.employeeData = data;
     })
   }
+
+  // Update employee data
+  /*showEmployee() {
+      this.restApi.getEmployee(this.id).subscribe(data => {
+        this.employeeData
+    })
+
+  } */
 }
