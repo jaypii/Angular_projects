@@ -28,10 +28,13 @@ export class CubeComponent implements AfterViewInit {
 
     this.scene.add(this.light);
 
+    const texture = new THREE.TextureLoader().load( 'assets/textures/images.jpg' );
+ 
     const geometry = new THREE.BoxGeometry(200, 200, 200);
     const material = new THREE.MeshPhongMaterial({
-      color: 0xff0000,
-      shininess: 100
+      //color: 0xff0000,
+      shininess: 100,
+      map: texture
     });
 
     this.mesh = new THREE.Mesh(geometry, material);
@@ -40,7 +43,7 @@ export class CubeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
+    this.renderer.setSize(window.innerWidth/1.4, window.innerHeight/1.4);
     this.rendererContainer.nativeElement.appendChild(this.renderer.domElement);
     this.animate();
     

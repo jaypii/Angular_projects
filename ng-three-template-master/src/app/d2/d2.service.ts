@@ -31,7 +31,7 @@ export class D2Service implements OnDestroy {
       //alpha: true,    // transparent background
       antialias: true // smooth edges
     });
-    this.renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
+    this.renderer.setSize(window.innerWidth/1.4, window.innerHeight/1.4);
 
     this.camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
     this.camera.position.set( 0, 0, 80 );
@@ -82,7 +82,7 @@ export class D2Service implements OnDestroy {
 
     this.scene.add(line);
     this.scene.add(splineObject);
-    this.renderer.render( this.scene, this.camera );
 
+    this.renderer.render( this.scene, this.camera );
   }
 }

@@ -35,7 +35,7 @@ export class SceneComponent implements AfterViewInit {
 
         // Ground plane
         const geom00 = new THREE.PlaneGeometry( 180, 180, 16, 16 );
-        const mat00 = new THREE.MeshPhongMaterial( {
+        const mat00 = new THREE.MeshLambertMaterial( {
             color: 0xffffff,
             side: THREE.DoubleSide,
             wireframe: false
@@ -43,33 +43,48 @@ export class SceneComponent implements AfterViewInit {
         const ground = new THREE.Mesh( geom00, mat00 );
         ground.rotateX(Math.PI/2);
         ground.translateZ(17);
+        ground.receiveShadow = true;
 
         // TorusKnot Object
         const geom01 = new THREE.TorusKnotGeometry(10, 3, 100, 16 );
         const mat01 = new THREE.MeshPhongMaterial( {color: 0x00ff00} );
         const torusKnot = new THREE.Mesh( geom01, mat01 );
 
+        torusKnot.position.set(-50,0,-50);
+
+        // Ring Object
+        const geom02 = new THREE.RingGeometry(4, 10, 16);
+        const mat02 = new THREE.MeshLambertMaterial({
+            color: 0xffff00,
+            side: THREE.DoubleSide
+        } );
+        const rgeom = new THREE.Mesh(geom02, mat02)
+        rgeom.position.set(0,0,0);
+        rgeom.rotation.y = Math.PI/4;
+
         this.scene.add(new THREE.AxesHelper(50));
 
         this.scene.add(ground);
-        this.scene.add(torusKnot)
+        this.scene.add(torusKnot);
+        this.scene.add(rgeom);
     }
 
     private createLight() {
+        var dLight = new THREE.DirectionalLight( 0xffffff, 0.1 );
+        var helper = new THREE.DirectionalLightHelper( dLight, 3 );
+        dLight.position.set(0,30,30);
+        dLight.rotation.x = Math.PI/4;
+
         var splight01 = new THREE.SpotLight(0xffffff);
         splight01.position.set(-50, 25, 100);
-
-        this.scene.add(splight01);
-
-        //var spotLightHelper = new THREE.SpotLightHelper( light);
-        //this.scene.add( spotLightHelper );
 
         var splight02 = new THREE.SpotLight(0xffffff);
         splight02.position.set(50, -25, -100);
 
+        this.scene.add(dLight);
+        this.scene.add(helper);
+        this.scene.add(splight01);
         this.scene.add(splight02);
-        //var spotLightHelper = new THREE.SpotLightHelper( light);
-        //this.scene.add( spotLightHelper );
     }
 
     private createCamera() {
@@ -103,8 +118,8 @@ export class SceneComponent implements AfterViewInit {
         this.renderer.setPixelRatio(devicePixelRatio);
         this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
 
-        //this.renderer.shadowMap.enabled = true;
-        //this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        this.renderer.shadowMap.enabled = true;
+        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         //this.renderer.setClearColor(0xaaaaaa, 1);
         //this.renderer.autoClear = true;
 
