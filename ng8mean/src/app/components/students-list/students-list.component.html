@@ -34,7 +34,7 @@
             <td mat-cell *matCellDef="let element; let i = index;">
                <button mat-raised-button color="primary" class="push-right"
                   [routerLink]="['/edit-student/', element._id]">Edit</button>
-               <button mat-raised-button color="accent" (click)="deleteStudent(i, element)">Delete</button>
+               <button mat-raised-button color="warn" (click)="deleteStudent(i, element)">Delete</button>
             </td>
          </ng-container>
     
