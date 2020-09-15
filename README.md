@@ -1,1 +1,1 @@
-Angular projects updated for Angular 9 by jaypii
+Angular projects updated for Angular 10.x by jaypii
