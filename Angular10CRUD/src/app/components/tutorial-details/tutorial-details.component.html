@@ -1,0 +1,71 @@
+<div>
+    <div *ngIf="currentTutorial.id">
+      <h4>Tutorial</h4>
+      <div class="card p-2 mt-2 mb-3 bg-light">
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              [(ngModel)]="currentTutorial.title"
+              name="title"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              [(ngModel)]="currentTutorial.description"
+              name="description"
+            />
+          </div>
+    
+          <div class="form-group mt-2">
+            <label><strong>Status:</strong></label>
+            {{ currentTutorial.published ? "Published" : "Pending" }}
+          </div>
+        </form>
+      </div>
+      
+      <button
+        class="btn btn-primary btn-sm"
+        *ngIf="currentTutorial.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentTutorial.published"
+        class="btn btn-primary btn-sm"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>&nbsp;&nbsp;
+  
+      <button class="btn btn-danger btn-sm" (click)="deleteTutorial()">
+        Delete
+      </button>&nbsp;&nbsp;
+  
+      <button
+        type="submit"
+        class="btn btn-success btn-sm"
+        (click)="updateTutorial()"
+      >
+        Update
+      </button>&nbsp;&nbsp;
+      <div class="alert alert-success mt-2" role="alert">
+        <p>{{ message }}</p>
+      </div>
+    </div>
+  
+    <div *ngIf="!currentTutorial.id">
+      <br />
+      <p>Cannot access this Tutorial...</p>
+    </div>
+  </div>
+  
+  
