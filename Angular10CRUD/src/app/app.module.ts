@@ -10,12 +10,19 @@ import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.com
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
 
+import { AddNWN2CharComponent } from './components/add-nwn2char/add-nwn2char.component';
+import { NWN2CharsListComponent } from './components/nwn2chars-list/nwn2chars-list.component';
+import { NWN2CharDetailsComponent } from './components/nwn2char-details/nwn2char-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AddTutorialComponent,
     TutorialDetailsComponent,
-    TutorialsListComponent
+    TutorialsListComponent,
+    AddNWN2CharComponent,
+    NWN2CharsListComponent,
+    NWN2CharDetailsComponent
   ],
   imports: [
     BrowserModule,
