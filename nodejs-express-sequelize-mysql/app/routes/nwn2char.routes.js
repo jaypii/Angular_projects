@@ -19,7 +19,7 @@ module.exports = app => {
     router.delete("/:id", nwn2chars.delete);
   
     // Delete all NWN2Chars
-    router.delete("/", nwn2chars.deleteAll);
+    //router.delete("/", nwn2chars.deleteAll);
   
     app.use('/api/nwn2chars', router);
   };
