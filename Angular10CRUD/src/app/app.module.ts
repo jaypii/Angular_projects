@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DataTablesModule } from 'angular-datatables';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,15 +15,14 @@ import { NWN2CharDetailsComponent } from './components/nwn2char-details/nwn2char
     AppComponent,
     AddNWN2CharComponent,
     NWN2CharsListComponent,
-    NWN2CharDetailsComponent,
+    NWN2CharDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule,
-    DataTablesModule
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

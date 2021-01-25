@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application. Angular frontend" });
 });
 
-require("./app/routes/tutorial.routes")(app);
+//require("./app/routes/tutorial.routes")(app);
 require("./app/routes/nwn2char.routes")(app);
 
 // set port, listen for requests
