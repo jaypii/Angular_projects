@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular10CRUD';
   todayDate = new Date();
+  data: any;
 }
