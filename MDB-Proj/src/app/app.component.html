@@ -1,0 +1,56 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo fixed-top">
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+        <a class="navbar-brand" href="#">Navbar</a>
+    </mdb-navbar-brand>
+    <!-- Collapsible content -->
+    <links>
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a href="home" class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="about" class="nav-link waves-light" mdbWavesEffect>About</a>
+            </li>
+            <li class="nav-item">
+                <a href="nwn2chars" class="nav-link waves-light" mdbWavesEffect>NWN2 Chars</a>
+            </li>
+
+        </ul>
+        <!-- Links -->
+
+        <!-- Search form 
+        <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search"/>
+            </div>
+        </form>
+        -->
+    </links>
+    <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+<div class="container-fluid mt-3">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Footer -->
+<mdb-card class="text-white mt-3 " bgColor="indigo">
+    <mdb-card-body>
+        <div class="row p-1">
+            <div class="col-sm">
+              <p>&copy; 2021, J. Polzin</p>
+            </div>
+            <div class="col-sm">
+              &nbsp;
+            </div>
+            <div class="col-sm">
+                <p class="text-right">{{ todayDate | date :'d.MM.yyyy HH:mm' }}</p>
+            </div>
+        </div>
+    </mdb-card-body>
+</mdb-card>
