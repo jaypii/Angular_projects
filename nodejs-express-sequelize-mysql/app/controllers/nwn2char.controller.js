@@ -56,8 +56,15 @@ exports.findAll = (req, res) => {
   
   const { limit, offset } = getPagination(page, size);
 
-  NWN2Char.findAndCountAll({ where: condition, limit, offset })
-    .then(data => {
+  NWN2Char.findAndCountAll({
+    where: condition,
+    order: [
+        ['lvltotal', 'ASC'],
+        ['name', 'ASC']
+    ],
+    limit: limit,
+    offset: offset
+  }).then(data => {
       const response = getPagingData(data, page, limit);
       res.send(response);
     })

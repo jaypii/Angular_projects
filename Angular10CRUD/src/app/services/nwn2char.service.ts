@@ -39,4 +39,9 @@ export class NWN2CharService {
   findByTitle(title): Observable<any> {
     return this.http.get(`${baseUrl}?name=${name}`);
   }
+
+/*   findByRace(rname): Observable<any> {
+    return this.http.get(`${baseUrl}?race=${race}`);
+  }
+ */
 }

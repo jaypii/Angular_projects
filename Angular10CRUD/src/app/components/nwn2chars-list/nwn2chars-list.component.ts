@@ -13,6 +13,7 @@ export class NWN2CharsListComponent implements OnInit {
   currentNWN2Char?: NWN2Char;
   currentIndex = -1;
   name = '';
+  race= '';
 
   page = 1;
   count = 0;
@@ -107,4 +108,16 @@ export class NWN2CharsListComponent implements OnInit {
         });
   }
 
+/*   searchRace(): void {
+    this.nwn2charService.findByRace(this.race)
+      .subscribe(
+        data => {
+          this.nwn2chars = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+ */
 }
