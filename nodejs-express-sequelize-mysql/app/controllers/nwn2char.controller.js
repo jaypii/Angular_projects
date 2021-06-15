@@ -141,7 +141,7 @@ exports.delete = (req, res) => {
     });
 };
 
-// Delete all Tutorials from the database.
+// Delete all NWN2Chars from the database.
 exports.deleteAll = (req, res) => {
   NWN2Char.destroy({
     where: {},
