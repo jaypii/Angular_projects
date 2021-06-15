@@ -13,7 +13,9 @@ import { Routes, RouterModule } from '@angular/router';const routes: Routes = [
     canActivate: [OktaAuthGuard]
   },
   { path: 'implicit/callback', component: OktaCallbackComponent }
-];@NgModule({
+];
+
+@NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

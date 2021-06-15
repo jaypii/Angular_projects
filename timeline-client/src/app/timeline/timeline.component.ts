@@ -10,25 +10,30 @@ import { ServerService } from '../server.service';
 })
 
 export class TimelineComponent implements OnInit {
+  title: 'Timeline Client';
   form: FormGroup;
   modalRef: BsModalRef;events: any[] = [];
   currentEvent: any = {id: null, name: '', description: '', date: new Date()};
+
   modalCallback: () => void;constructor(private fb: FormBuilder,
               private modalService: BsModalService,
-              private server: ServerService) { }ngOnInit() {
+    private server: ServerService) { }
+    ngOnInit() {
     this.form = this.fb.group({
       name: [this.currentEvent.name, Validators.required],
       description: this.currentEvent.description,
       date: [this.currentEvent.date, Validators.required],
     });
     this.getEvents();
-  }private updateForm() {
+  }
+  private updateForm() {
     this.form.setValue({
       name: this.currentEvent.name,
       description: this.currentEvent.description,
       date: new Date(this.currentEvent.date)
     });
-  }private getEvents() {
+  }
+  private getEvents() {
     this.server.getEvents().then((response: any) => {
       console.log('Response', response);
       this.events = response.map((ev) => {
@@ -38,12 +43,14 @@ export class TimelineComponent implements OnInit {
         return ev;
       });
     });
-  }addEvent(template) {
+  }
+  addEvent(template) {
     this.currentEvent = {id: null, name: '', description: '', date: new Date()};
     this.updateForm();
     this.modalCallback = this.createEvent.bind(this);
     this.modalRef = this.modalService.show(template);
-  }createEvent() {
+  }
+  createEvent() {
     const newEvent = {
       name: this.form.get('name').value,
       description: this.form.get('description').value,
@@ -53,12 +60,14 @@ export class TimelineComponent implements OnInit {
     this.server.createEvent(newEvent).then(() => {
       this.getEvents();
     });
-  }editEvent(index, template) {
+  }
+  editEvent(index, template) {
     this.currentEvent = this.events[index];
     this.updateForm();
     this.modalCallback = this.updateEvent.bind(this);
     this.modalRef = this.modalService.show(template);
-  }updateEvent() {
+  }
+  updateEvent() {
     const eventData = {
       id: this.currentEvent.id,
       name: this.form.get('name').value,
@@ -69,11 +78,13 @@ export class TimelineComponent implements OnInit {
     this.server.updateEvent(eventData).then(() => {
       this.getEvents();
     });
-  }deleteEvent(index) {
+  }
+  deleteEvent(index) {
     this.server.deleteEvent(this.events[index]).then(() => {
       this.getEvents();
     });
-  }onCancel() {
+  }
+  onCancel() {
     this.modalRef.hide();
   }
 }

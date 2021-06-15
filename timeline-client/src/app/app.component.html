@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" [routerLink]="['']">
     <i class="fa fa-clock-o"></i>
   </a>
@@ -19,4 +19,19 @@
     <button class="btn btn-primary" *ngIf="isAuthenticated" (click)="logout()"> Logout </button>
   </span>
 </nav>
-<router-outlet></router-outlet>
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>
+<!-- Footer -->
+<div class="card mt-3 p-2 bg-light">
+  <div class="row">
+    <div class="col">
+      <p>&copy; 2021, J. Polzin</p>
+    </div>
+    <div class="col">
+      <p class="text-center">&nbsp;</p></div>
+    <div class="col">
+      <p class="text-end">{{myDate | date:'dd.MM.yyyy HH:MM'}}</p>
+    </div>
+  </div>
+</div>
