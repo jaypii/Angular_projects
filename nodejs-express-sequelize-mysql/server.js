@@ -21,7 +21,7 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application. Angular frontend" });
+  res.json({ message: "Welcome to Angular Frontend" });
 });
 
 //require("./app/routes/tutorial.routes")(app);
