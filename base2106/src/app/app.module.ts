@@ -1,18 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// HttpClient module for RESTful API
+import { HttpClientModule } from '@angular/common/http';
+
+// Routing module for router service
+import { AppRoutingModule } from './app-routing.module';
+
+// Forms module
+import { FormsModule } from '@angular/forms';
+
+
+import { Home } from './home/home.component';
+import { About } from './about/about.component';
+import { FeaturesComponent } from './features/features.component';
+import { EmployeeCreateComponent } from './employee-create/employee-create.component';
+import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
+import { EmployeesListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Home,
+    About,
+    FeaturesComponent,
+    EmployeeCreateComponent,
+    EmployeeEditComponent,
+    EmployeesListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

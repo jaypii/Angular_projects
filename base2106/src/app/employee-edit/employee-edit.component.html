@@ -1,0 +1,32 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between">
+        <div class="p-2">
+          <a href="list">
+            <span class="material-icons">list_alt</span>
+          </a>
+        </div>
+        <h3>Update Employee</h3>
+        <div class="p-2">&nbsp;</div>
+      </div>
+      <div class="card p-2 bg-light">
+      <div class="form-group mb-2">
+        <input type="text" [(ngModel)]="employeeData.name" class="form-control" placeholder="Name">
+      </div>
+  
+      <div class="form-group mb-2">
+        <input type="text" [(ngModel)]="employeeData.email" class="form-control" placeholder="Email">
+      </div>
+  
+      <div class="form-group mb-2">
+        <input type="text" [(ngModel)]="employeeData.phone" class="form-control" placeholder="Phone">
+      </div>
+  
+      <div class="form-group">
+        <button class="btn btn-success btn-sm btn-block mt-2" (click)="updateEmployee()"><span class="material-icons">
+          update
+          </span></button>
+      </div>
+    </div>
+    </div>
+</div>  
