@@ -1,11 +1,20 @@
 <div class="container mt-5">
-
-    <div class="d-flex flex-row-reverse bd-highlight">
-      <button class="btn btn-primary" routerLink="/add">Add Empoyee</button>
-    </div>
-  
     <h2 class="mb-3 text-center">Users Collection</h2>
-  
+    <div class="card bg-light p-3 mb-2">
+      <div class="d-flex flex-row">
+      <div>
+        <select (change)="onTableSizeChange($event)" class="form-select">
+          <option selected>Select No of rows ...</option>
+          <option *ngFor="let size of tableSizesArr" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+      </div>
+      &nbsp;&nbsp;
+      <button class="btn btn-sm btn-primary p" routerLink="/add">Add Employee</button>
+    </div>
+    </div>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -17,7 +26,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of Users">
+        <tr *ngFor="let user of Users | paginate: {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };">
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.email}}</td>
@@ -29,5 +42,8 @@
         </tr>
       </tbody>
     </table>
+    <div class="card p-2 bg-light">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="handlePageChange($event)"></pagination-controls>
+    </div>
   
   </div>

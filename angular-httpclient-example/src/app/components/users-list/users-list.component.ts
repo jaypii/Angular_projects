@@ -11,6 +11,10 @@ import { CrudService } from "../../shared/crud.service";
 export class UsersListComponent implements OnInit {
 
   Users: any = [];
+  page=1;
+  count = 0;
+  tableSize = 9;
+  tableSizesArr = [4,9,14,19];
 
   constructor(
     public crudService: CrudService
@@ -34,4 +38,18 @@ export class UsersListComponent implements OnInit {
     }
   }
 
+  onTableDataChange(event:any){
+    this.page = event;
+    this.fetchUsers();
+  }  
+
+  onTableSizeChange(event:any){
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.fetchUsers();
+  }  
+
+  handlePageChange(event:any) {
+    this.page = event;
+  }  
 }
