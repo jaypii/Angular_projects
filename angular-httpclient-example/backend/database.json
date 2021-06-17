@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Adam Zemlak",
       "email": "a.zedlak@gmail.com",
-      "phone": "(236) 354-2516"
+      "phone": "(236) 354-2517"
     },
     {
       "id": 2,
@@ -599,6 +599,12 @@
       "name": "Joe Gislason",
       "email": "j.gislason@gmail.com",
       "phone": "(671) 417-6334"
+    },
+    {
+      "name": "Joerg Polzin",
+      "email": "jpomv2@icloud.com",
+      "phone": "0041 79 252 39 80",
+      "id": 101
     }
   ]
 }

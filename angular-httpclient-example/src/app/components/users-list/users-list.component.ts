@@ -13,8 +13,8 @@ export class UsersListComponent implements OnInit {
   Users: any = [];
   page=1;
   count = 0;
-  tableSize = 9;
-  tableSizesArr = [4,9,14,19];
+  tableSize = 10;
+  tableSizesArr = [5,10];
 
   constructor(
     public crudService: CrudService
