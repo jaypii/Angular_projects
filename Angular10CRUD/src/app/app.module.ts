@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { AddNWN2CharComponent } from './components/add-nwn2char/add-nwn2char.component';
 import { NWN2CharsListComponent } from './components/nwn2chars-list/nwn2chars-list.component';
 import { NWN2CharDetailsComponent } from './components/nwn2char-details/nwn2char-details.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddNWN2CharComponent,
     NWN2CharsListComponent,
-    NWN2CharDetailsComponent
+    NWN2CharDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
