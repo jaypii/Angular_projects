@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-export class Photo{
+export class Photo {
   albumId!: string;
-  id!: string
+  ID!: string;
   title!: string;
-  imgurl!: string;
+  url!: string;
   thumbnailUrl!: string;
 }
 
@@ -18,7 +19,7 @@ export class Photo{
 export class PhotoService {
 
   // REST API
-  endpoint = 'http://localhost:3000';
+  endpoint = 'https://jsonplaceholder.typicode.com';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -42,17 +43,17 @@ export class PhotoService {
       retry(1),
       catchError(this.processError)
     )
-  } 
+  }  
 
   processError(err: { error: { message: string; }; status: any; message: any; }) {
-    let message = '';
-    if(err.error instanceof ErrorEvent) {
-     message = err.error.message;
-    } else {
-     message = `Error Code: ${err.status}\nMessage: ${err.message}`;
-    }
-    console.log(message);
-    return throwError(message);
+     let message = '';
+     if(err.error instanceof ErrorEvent) {
+      message = err.error.message;
+     } else {
+      message = `Error Code: ${err.status}\nMessage: ${err.message}`;
+     }
+     console.log(message);
+     return throwError(message);
   }
- 
+  
 }
