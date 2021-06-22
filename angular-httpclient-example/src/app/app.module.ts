@@ -12,6 +12,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PhotosListComponent } from './components/photos-list/photos-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     Home,
     AddUserComponent,
     EditUserComponent,
-    UsersListComponent
+    UsersListComponent,
+    PhotosListComponent
   ],
   imports: [
     BrowserModule,

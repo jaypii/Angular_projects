@@ -148,7 +148,7 @@ exports.deleteAll = (req, res) => {
     truncate: false
   })
   .then(nums => {
-    res.send({ message: `${nums} Tutorials were deleted successfully!` });
+    res.send({ message: `${nums} NWN2Chars were deleted successfully!` });
   })
   .catch(err => {
     res.status(500).send({

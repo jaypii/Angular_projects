@@ -1,0 +1,43 @@
+<h2 class="mb-2 text-start">Main View</h2>
+  <div class="card bg-light p-2 mb-2">
+    <div class="d-flex flex-row justify-content-between">
+      <div>
+        <select (change)="onTableSizeChange($event)" class="form-select">
+          <option selected>Select No of rows ...</option>
+          <option *ngFor="let size of tableSizesArr" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+      </div>
+      &nbsp;&nbsp;
+    </div>
+  </div>
+
+  <table class="table table-bordered table-striped mb-2">
+    <thead>
+      <tr>
+        <th scope="col">#AlbumId</th>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let photo of Photos | paginate: {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };">
+        <td>{{photo.thumbnailUrl}}</td>
+        <td>{{photo.id}}</td>
+        <td>{{photo.title}}</td>
+        <td>
+          <span class="edit btn-success btn-sm btn" routerLink="/show/{{Photos.id}}">Open</span>&nbsp;    
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Pagination Controls -->
+  <div class="card p-2 bg-light">
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="handlePageChange($event)"></pagination-controls>
+  </div>
