@@ -1,0 +1,21 @@
+<div class="d-flex flex-row justify-content-between">
+    <div class="form-check">
+        <input class="form-check-input" [id]="item.description" type="checkbox" (change)="item.done = !item.done" [checked]="item.done" />
+        <label class="form-check-label mr-3" [for]="item.description">{{item.description}}</label>
+    </div>
+    <div class="btn-group px-3" *ngIf="!editable">
+        <button class="btn btn-sm btn-warning" (click)="editable = !editable">Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="remove.emit()">Delete</button>
+    </div>
+
+    <!-- This section shows only if user clicks Edit button -->
+    <div *ngIf="editable">
+        <div class="input-group input-group-sm">
+            <input class="text" placeholder="edit item" [value]="item.description" #editedItem (keyup.enter)="saveItem(editedItem.value)">
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-sm btn-outline-primary" (click)="editable = !editable">Cancel</button>
+            <button class="btn btn-sm btn-outline-success" (click)="saveItem(editedItem.value)">Save</button>
+        </div>
+    </div>
+</div>
