@@ -3,12 +3,18 @@
   <div class="card bg-light p-2 mt-3">
     <div class="mb-3 row">
       <label for="inputDescription" class="col-sm-4 col-form-label">What would you like to do today?</label>
-      <div class="col-sm-8">
+      <div class="col-sm-7">
         <input type="text"
         #newItem
           class="form-control"
           id="inputDescription"
           (keyup.enter)="addItem(newItem.value); newItem.value = ''">
+      </div>
+      <div class="col-sm-1">
+          <!-- Add button -->
+          <div class="d-flex flex-row">
+            <button type="button" class="btn btn-sm btn-primary" (click)="addItem(newItem.value)">Add</button>
+          </div>  
       </div>
     </div>
   </div>
@@ -41,10 +47,6 @@
     </div>
   </div>
   <div class="card mt-1 p-2">
-    <!-- Add button -->
-    <div class="d-flex flex-row">
-      <button type="button" class="btn btn-sm btn-primary" (click)="addItem(newItem.value)">Add</button>
-    </div>  
   </div>
 
   <h3>
