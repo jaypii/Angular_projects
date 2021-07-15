@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { version } from '../../package.json';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular10CRUD';
+  public version: string = version;
   todayDate = new Date();
   data: any;
 }
