@@ -29,6 +29,12 @@
       "email": "k.strongheart@mfu.com",
       "phone": "002-345-67-981",
       "id": 6
+    },
+    {
+      "name": "Rickie ",
+      "email": "rickie@tester.com",
+      "phone": "12",
+      "id": 7
     }
   ]
 }
