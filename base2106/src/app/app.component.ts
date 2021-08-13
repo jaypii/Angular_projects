@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'base2106';
   todayDate = new Date();
+  color = 'yellow';
 }

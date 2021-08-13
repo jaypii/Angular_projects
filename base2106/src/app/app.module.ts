@@ -11,13 +11,16 @@ import { AppRoutingModule } from './app-routing.module';
 // Forms module
 import { FormsModule } from '@angular/forms';
 
-
+// Import components
 import { Home } from './home/home.component';
 import { About } from './about/about.component';
 import { FeaturesComponent } from './features/features.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeesListComponent } from './employee-list/employee-list.component';
+
+// Directives
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { EmployeesListComponent } from './employee-list/employee-list.component'
     FeaturesComponent,
     EmployeeCreateComponent,
     EmployeeEditComponent,
-    EmployeesListComponent
+    EmployeesListComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
