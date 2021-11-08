@@ -13,8 +13,8 @@
       "phone": "001-123-4568"
     },
     {
-      "name": "Barney Stormsong",
-      "email": "b.stormsong@mcu.com",
+      "name": "Barney Starsong",
+      "email": "b.starsong@mcu.com",
       "phone": "0041 61 234 56 89",
       "id": 3
     },
@@ -31,7 +31,7 @@
       "id": 6
     },
     {
-      "name": "Rickie ",
+      "name": "Rickie Stormsong",
       "email": "rickie@tester.com",
       "phone": "12",
       "id": 7
