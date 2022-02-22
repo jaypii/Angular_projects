@@ -37,6 +37,10 @@ export class NWN2CharService {
   }
 
   findByTitle(title): Observable<any> {
-    return this.http.get(`${baseUrl}?name=${name}`);
+    return this.http.get(`${baseUrl}?cname=${name}`);
+  }
+
+  findByLevel(lvltotal): Observable<any> {
+    return this.http.get(`${baseUrl}?lvltotal=${lvltotal}`);
   }
 }

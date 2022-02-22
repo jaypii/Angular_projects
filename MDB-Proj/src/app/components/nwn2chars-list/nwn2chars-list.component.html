@@ -2,10 +2,10 @@
   <div class="col-md-8">
       <div class="input-group mb-3">
         <input
-          type="text"
+          type="number"
           class="form-control"
-          placeholder="Search by name"
-          [(ngModel)]="name"
+          placeholder="Search by Level Total"
+          [(ngModel)]="lvltotal"
         />
         <div class="input-group-append">
           <button
@@ -56,7 +56,7 @@
               };"
         >
           <td>{{ nwn2char.id }}</td>
-          <td>{{ nwn2char.name }}</td>
+          <td>{{ nwn2char.cname }}</td>
           <td>{{ nwn2char.gender }}</td>
           <td>{{ nwn2char.race }}</td>
           <td>{{ nwn2char.alignment}}</td>
