@@ -16,8 +16,8 @@ export class NWN2CharsListComponent implements OnInit {
 
   page = 1;
   count = 0;
-  pageSize = 12;
-  pageSizes = [12, 18, 24];
+  pageSize = 6;
+  pageSizes = [6, 12, 18, 24];
 
   constructor(private nwn2charService: NWN2CharService) { }
 

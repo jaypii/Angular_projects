@@ -32,6 +32,9 @@
         </option>
       </select>
       <!-- Responsiuve table -->
+      <div class="alert alert-info mt-2" role="alert">
+        {{ count }} entries in NWN2 Chars List
+      </div>
       <div class="table-responsive">
         <table class="table table-striped table-hover">
           <thead>
@@ -56,7 +59,7 @@
               };"
         >
           <td>{{ nwn2char.id }}</td>
-          <td>{{ nwn2char.cname }}</td>
+          <td>{{ nwn2char.name }}</td>
           <td>{{ nwn2char.gender }}</td>
           <td>{{ nwn2char.race }}</td>
           <td>{{ nwn2char.alignment}}</td>

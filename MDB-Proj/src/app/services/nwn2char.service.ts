@@ -12,6 +12,10 @@ export class NWN2CharService {
 
   constructor(private http: HttpClient) { }
 
+  getAllEntries(): Observable<number> {
+    return this.http.get<number>(baseUrl);
+  }
+
   getAll(params: any): Observable<any> {
     return this.http.get<any>(baseUrl, {params});
   }
