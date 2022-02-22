@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-webpack": "^0.1300.1",
+    "@angular-devkit/build-webpack": "^0.1302.4",
     "@angular/animations": "~13.0.0",
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
@@ -29,8 +29,8 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.0.1",
-    "@angular/cli": "^13.0.1",
+    "@angular-devkit/build-angular": "~13.2.4",
+    "@angular/cli": "^13.2.4",
     "@angular/compiler-cli": "~13.0.0",
     "@nativescript/schematics": "^11.0.0",
     "@types/jasmine": "~3.6.0",
