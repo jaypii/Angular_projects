@@ -13,7 +13,7 @@ export class PhotosListComponent implements OnInit {
   page=1;
   count = 0;
   tableSize = 10;
-  tableSizesArr = [5,10];
+  tableSizesArr = [5,10,15];
 
   constructor(
     public photoService: PhotoService
