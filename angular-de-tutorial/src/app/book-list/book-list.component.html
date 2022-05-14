@@ -1,0 +1,6 @@
+<!-- book-list.component.html -->
+<ul class="list-group">
+    <li *ngFor="let book of books | async" class="list-group-item">
+      <b>{{book.title}}</b> - <small>{{book.subtitle}}</small>
+    </li>
+</ul>
