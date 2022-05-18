@@ -1,0 +1,36 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.4.0
+  cypress: cypress-io/cypress@1.28.0
+executors:
+  base-14-17-3:
+    docker:
+      - image: 'cypress/base:14.17.3'
+jobs:
+  build:
+    executor:
+      name: node/default
+      tag: 'lts'
+    steps:
+      - checkout
+      - node/install-packages
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run build
+workflows:
+  ci:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
+      - node/test:
+          version: 'lts'
+          requires:
+            - build
+      - cypress/run:
+          executor: base-14-17-3
+          start: npm start
+          wait-on: 'http://localhost:4200'
+          requires:
+            - build
