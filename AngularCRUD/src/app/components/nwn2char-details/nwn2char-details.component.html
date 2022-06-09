@@ -1,0 +1,29 @@
+<div class="card mt-2 w-50">
+    <h4 class="card-header">
+        {{ currentNWN2Char.id}}&nbsp;&nbsp;{{ currentNWN2Char.name}}&nbsp;&nbsp;<span class="float-end">Layer: {{currentNWN2Char.layer}}</span>
+    </h4>
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <p class="lead">Race: {{ currentNWN2Char.race}}</p>
+            <p >{{ currentNWN2Char.gender}}</p>
+            
+            <p>Alignment: {{ currentNWN2Char.alignment}}</p>
+        </div>
+        <div class="alert alert-info" role="alert">
+            <p class="lead">Classes:</p>
+            <p>
+            Startklasse: {{currentNWN2Char.startclass}} {{currentNWN2Char.lvlclass1}}<br/>
+            Klasse 2: {{ currentNWN2Char.class2 }} {{currentNWN2Char.lvlclass2}}<br/>
+            Klasse 3: {{currentNWN2Char.class3}} {{currentNWN2Char.lvlclass3}}<br/>
+            Klasse 4: {{currentNWN2Char.class4}} {{currentNWN2Char.lvlclass4}}
+            </p>
+        </div>
+        <p class="lead">Total Level: {{currentNWN2Char.lvltotal}}</p>      
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-md-6">
+        <a href="/nwn2chars" class="btn btn-primary btn-sm"> Back </a>
+    </div>
+    <div class="col-md-6"></div>
+</div>

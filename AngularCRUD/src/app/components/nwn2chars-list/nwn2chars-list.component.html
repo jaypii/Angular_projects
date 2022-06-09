@@ -1,0 +1,96 @@
+<!-- <div class="row">
+  <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by name"
+          [(ngModel)]="name"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="retrieveNWN2Chars()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-4">&nbsp;</div>
+</div>
+ -->
+<!-- Table rows -->
+<div class="row">
+  <div class="col-md-12">
+      <h4>NWN2 Chars List</h4>
+      <div class="row">
+        <div class="col-md-2">
+        Items per Page:
+        <select class="form-select" (change)="handlePageSizeChange($event)">
+          <option *ngFor="let size of pageSizes" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+        </div>
+        <div class="col-md-10">
+          &nbsp;
+        </div>
+      </div>
+      <!-- Responsiuve table -->
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Race</th>
+            <th scope="col">Align</th>
+            <th scope="col">Classes</th>
+            <th scope="col">LvlTot</th>
+            <th scope="col">Layer</th>
+          </tr>
+          </thead>
+          <tbody>
+        <tr
+          *ngFor="
+            let nwn2char of nwn2chars| paginate : {
+              itemsPerPage: pageSize,
+              currentPage: page,
+              totalItems: count
+              };"
+        >
+          <td><a href="nwn2chars/{{ nwn2char.id }}" class="link-info">{{ nwn2char.id }}</a></td>
+          <td>{{ nwn2char.name }}</td>
+          <td>{{ nwn2char.gender }}</td>
+          <td>{{ nwn2char.race }}</td>
+          <td>{{ nwn2char.alignment}}</td>
+          <td>
+            {{ nwn2char.startclass}} {{ nwn2char.lvlclass1}}/
+            {{ nwn2char.class2}} {{ nwn2char.lvlclass2}}/
+            {{ nwn2char.class3}} {{ nwn2char.lvlclass3}}/
+            {{ nwn2char.class4}} {{ nwn2char.lvlclass4}}
+          </td>
+          <td>{{ nwn2char.lvltotal }}</td>
+          <td>{{ nwn2char.layer }}</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+<!-- Pagination row -->
+<div class="row">
+  <div class="col-md-6">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      [responsive]="true"
+      (pageChange)="handlePageChange($event)"
+    ></pagination-controls>
+  </div>
+  <div class="col-md-6">&nbsp;</div>
+</div>
