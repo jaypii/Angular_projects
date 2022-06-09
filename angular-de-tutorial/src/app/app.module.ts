@@ -7,12 +7,14 @@ import { InfoBoxComponent } from './info-box/info-box.component';
 import { BookListComponent } from './book-list/book-list.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoBoxComponent,
-    BookListComponent
+    BookListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
