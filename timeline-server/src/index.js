@@ -1,5 +1,6 @@
 const bearerToken = require('express-bearer-token');
-const oktaAuth = require('./auth');const express = require('express');
+const oktaAuth = require('./auth');
+const express = require('express');
 
 const cors = require('cors');
 const bodyParser = require('body-parser');
